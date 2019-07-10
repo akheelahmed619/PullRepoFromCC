@@ -1,0 +1,25 @@
+mkdir informis-fe
+cd informis-fe
+git init
+git remote add origin https://git-codecommit.us-west-2.amazonaws.com/v1/repos/Informis-FE-respository
+git config --local credential.helper '!aws codecommit --profile informis-fe credential-helper $@'
+git config --local credential.UseHttpPath true
+git config -l  <<<< confirm settings.
+git pull origin master  <<  it should prompt for MFA
+
+
+
+to push the repo
+
+git add .
+git commit -m "message"
+git push origin master
+
+
+Helpfull Resources.
+
+https://aws.amazon.com/blogs/devops/using-aws-codecommit-pull-requests-to-request-code-reviews-and-discuss-code/
+https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-unixes.html#setting-up-https-unixes-credential-helper
+https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-connect.html
+https://aws.amazon.com/blogs/devops/refining-access-to-branches-in-aws-codecommit/
+https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository-existing.html
